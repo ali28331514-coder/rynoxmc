@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.server-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header i {
+    font-size: 3rem;
+    color: #5865F2;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.server-info {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #5865F2;
+    margin-right: 15px;
+    width: 30px;
+}
+
+.label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-right: 15px;
+}
+
+.value {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.value a {
+    color: #5865F2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.value a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #5865F2;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.discord-btn {
+    background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
+}
+
+.discord-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(88, 101, 242, 0.6);
+}
+
+.copy-ip {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.copy-ip:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.status {
+    text-align: center;
+}
+
+.status-online {
+    color: #00ff88;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.status-online i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .server-card {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}
