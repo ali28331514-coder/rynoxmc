@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 RynoxMC - Server Minecraft</title>
+    <title>🎮 RynoxMC - IP & Discord</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="server-card">
-            <div class="header">
-                <i class="fab fa-discord"></i>
-                <h1>🎮 RynoxMC</h1>
+        <div class="card">
+            <h1>🎮 RynoxMC</h1>
+            
+            <div class="info-box">
+                <h2>معلوماتك</h2>
+                <div class="info-item">
+                    <span class="label">🌐 الـ IP:</span>
+                    <span class="value" id="ip">جاري التحميل...</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">📍 البلد:</span>
+                    <span class="value" id="country">جاري التحميل...</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">🏙️ المدينة:</span>
+                    <span class="value" id="city">جاري التحميل...</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">🔧 ISP:</span>
+                    <span class="value" id="isp">جاري التحميل...</span>
+                </div>
             </div>
             
-            <div class="server-info">
-                <div class="info-item">
-                    <i class="fas fa-server"></i>
-                    <span class="label">Server IP:</span>
-                    <div class="value">rynox.mcsh.io</div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-users"></i>
-                    <span class="label">Discord:</span>
-                    <div class="value">
-                        <a href="https://discord.gg/t8YaQxZZ" target="_blank">
-                            discord.gg/t8YaQxZZ
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="action-buttons">
-                <a href="https://discord.gg/t8YaQxZZ" target="_blank" class="btn discord-btn">
-                    <i class="fab fa-discord"></i> انضم للديسكورد
+            <div class="discord-box">
+                <p>انضم إلى سيرفر Discord الخاص بنا:</p>
+                <a href="https://discord.gg/t8YaQxZZ" target="_blank" class="discord-btn">
+                    💬 Discord Server
                 </a>
-                <button class="btn copy-ip" onclick="copyIP()">
-                    <i class="fas fa-copy"></i> نسخ IP
-                </button>
             </div>
             
-            <div class="status">
-                <span class="status-online">
-                    <i class="fas fa-circle"></i> السيرفر شغال ✅
-                </span>
+            <!-- المنصات الجديدة في الأسفل -->
+            <div class="social-platforms">
+                <a href="https://rynox.mcsh.io" class="platform-btn server-ip">
+                    <i class="fas fa-server"></i> rynox.mcsh.io
+                </a>
+                <a href="https://discord.gg/t8YaQxZZ" class="platform-btn discord">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+                <a href="https://www.tiktok.com/@rynoxmc1" class="platform-btn tiktok">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+                <a href="https://www.youtube.com/channel/UCtgiXI46ZIcZ1oIxe-uzlKQ" class="platform-btn youtube">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
