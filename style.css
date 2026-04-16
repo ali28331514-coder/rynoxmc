@@ -1,52 +1,134 @@
-/* نفس الكود السابق + الإضافات الجديدة */
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.social-links {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
     margin-bottom: 25px;
 }
 
-.social-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.info-item {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: white;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+}
+
+.value {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.1em;
+    word-break: break-all;
+}
+
+.value a {
+    color: #667eea;
     text-decoration: none;
+}
+
+.value a:hover {
+    text-decoration: underline;
+}
+
+.discord-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1em;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+.discord-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.5);
 }
 
-.social-icon.discord {
-    background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
+@media (max-width: 600px) {
+    .card {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .info-box {
+        padding: 15px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .value {
+        font-size: 1em;
+    }
 }
-
-.social-icon.tiktok {
-    background: linear-gradient(135deg, #000 0%, #ff0050 100%);
-}
-
-.social-icon.youtube {
-    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-}
-
-/* تحسين أيقونات التواصل الاجتماعي في القائمة */
-.info-item i.fab.fa-tiktok {
-    background: linear-gradient(135deg, #000 0%, #ff0050 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.info-item i.fab.fa-youtube {
-    color: #FF0000;
-
 }
