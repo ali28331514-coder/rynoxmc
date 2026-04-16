@@ -1,21 +1,21 @@
-// جلب معلومات الـ IP والموقع
-async function fetchIPInfo() {
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
+function copyIP() {
+    navigator.clipboard.writeText('rynox.mcsh.io').then(() => {
+        const btn = document.querySelector('.copy-ip');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+        btn.style.background = '#00ff88';
         
-        document.getElementById('ip').textContent = data.ip || 'Unknown';
-        document.getElementById('country').textContent = data.country_name || 'Unknown';
-        document.getElementById('city').textContent = data.city || 'Unknown';
-        document.getElementById('isp').textContent = data.org || 'Unknown';
-        
-    } catch (error) {
-        console.error('Error fetching IP info:', error);
-        document.getElementById('ip').textContent = 'Error';
-        document.getElementById('country').textContent = 'Error';
-        document.getElementById('city').textContent = 'Error';
-        document.getElementById('isp').textContent = 'Error';
-    }
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = 'rgba(255, 255, 255, 0.2)';
+        }, 2000);
+    });
 }
 
-window.addEventListener('load', fetchIPInfo);
+// تأثير حركة عند التحميل
+window.addEventListener('load', () => {
+    document.querySelectorAll('.info-item').forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+        item.style.animation = 'slideUp 0.5s ease-out forwards';
+    });
+});
