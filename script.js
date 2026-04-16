@@ -1,12 +1,13 @@
-// جلب الـ IP فقط
-async function fetchIP() {
+// جلب IP المستخدم
+async function getUserIP() {
     try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        document.getElementById('ip').textContent = data.ip || 'غير معروف';
-    } catch (error) {
-        document.getElementById('ip').textContent = 'خطأ';
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
+        document.getElementById('ip').textContent = data.ip;
+    } catch {
+        document.getElementById('ip').textContent = 'غير معروف';
     }
 }
 
-window.addEventListener('load', fetchIP);
+// تشغيل عند تحميل الصفحة
+window.addEventListener('load', getUserIP);
