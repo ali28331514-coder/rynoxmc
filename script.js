@@ -1,24 +1,21 @@
-// نسخ IP السيرفر
-function copyIP() {
-    navigator.clipboard.writeText('rynox.mcsh.io').then(() => {
-        alert('✅ تم نسخ IP: rynox.mcsh.io');
-    });
+// جلب معلومات الـ IP والموقع
+async function fetchIPInfo() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        document.getElementById('ip').textContent = data.ip || 'Unknown';
+        document.getElementById('country').textContent = data.country_name || 'Unknown';
+        document.getElementById('city').textContent = data.city || 'Unknown';
+        document.getElementById('isp').textContent = data.org || 'Unknown';
+        
+    } catch (error) {
+        console.error('Error fetching IP info:', error);
+        document.getElementById('ip').textContent = 'Error';
+        document.getElementById('country').textContent = 'Error';
+        document.getElementById('city').textContent = 'Error';
+        document.getElementById('isp').textContent = 'Error';
+    }
 }
 
-// نسخ روابط التواصل الاجتماعي
-document.querySelectorAll('.value a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        navigator.clipboard.writeText(this.href).then(() => {
-            const originalText = this.textContent;
-            this.textContent = '✅ تم النسخ!';
-            this.style.color = '#00ff88';
-            
-            setTimeout(() => {
-                this.textContent = originalText;
-                this.style.color = '#667eea';
-            }, 1500);
-        });
-        window.open(this.href, '_blank');
-    });
-});
+window.addEventListener('load', fetchIPInfo);
